@@ -1,0 +1,749 @@
+/* ============================================
+   css/animations.css - PureFlow Motion & Effects
+   All keyframes and animation utility classes
+   ============================================ */
+
+/* ========== CORE KEYFRAMES ========== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes glow-pulse-cyan {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(0, 194, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 24px rgba(0, 194, 255, 0.7), 0 0 48px rgba(0, 194, 255, 0.2);
+  }
+}
+
+@keyframes glow-pulse-red {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(255, 45, 85, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 32px rgba(255, 45, 85, 0.8), 0 0 64px rgba(255, 45, 85, 0.3);
+  }
+}
+
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(120px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(120px) rotate(-360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes gauge-draw {
+  from {
+    stroke-dashoffset: 565;
+  }
+  to {
+    stroke-dashoffset: var(--target-offset, 565);
+  }
+}
+
+@keyframes number-count {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes alert-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes solar-wave {
+  0% {
+    transform: scaleX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes border-glow-rotate {
+  0% {
+    border-color: var(--accent);
+  }
+  33% {
+    border-color: var(--violet);
+  }
+  66% {
+    border-color: var(--mint);
+  }
+  100% {
+    border-color: var(--accent);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-2px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes rotate-in {
+  from {
+    opacity: 0;
+    transform: rotate(-10deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes ping {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  75%, 100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 194, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 194, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 194, 255, 0);
+  }
+}
+
+@keyframes hologram-flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 0.3;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  15% {
+    opacity: 0.5;
+  }
+  20% {
+    opacity: 1;
+  }
+}
+
+/* ========== UTILITY ANIMATION CLASSES ========== */
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 0.5s ease forwards;
+}
+
+.animate-fadeInScale {
+  animation: fadeInScale 0.5s ease forwards;
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-glow-cyan {
+  animation: glow-pulse-cyan 2s ease-in-out infinite;
+}
+
+.animate-glow-red {
+  animation: glow-pulse-red 1.5s ease-in-out infinite;
+}
+
+.animate-scanline {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-scanline::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 194, 255, 0.05) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+  animation: scanline 8s linear infinite;
+}
+
+.animate-orbit {
+  animation: orbit 12s linear infinite;
+  transform-origin: center;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+.animate-blink {
+  animation: blink 1.5s ease-in-out infinite;
+}
+
+.animate-slide-down {
+  animation: slide-down 0.4s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease forwards;
+}
+
+.animate-rotate-in {
+  animation: rotate-in 0.5s ease forwards;
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-ripple {
+  animation: ripple 2s infinite;
+}
+
+.animate-hologram {
+  animation: hologram-flicker 3s infinite;
+}
+
+/* ========== STAGGERED DELAYS ========== */
+
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+.stagger-5 {
+  animation-delay: 0.5s;
+}
+
+/* Stagger for grid items */
+.grid-stagger > *:nth-child(1) { animation-delay: 0.05s; }
+.grid-stagger > *:nth-child(2) { animation-delay: 0.1s; }
+.grid-stagger > *:nth-child(3) { animation-delay: 0.15s; }
+.grid-stagger > *:nth-child(4) { animation-delay: 0.2s; }
+.grid-stagger > *:nth-child(5) { animation-delay: 0.25s; }
+.grid-stagger > *:nth-child(6) { animation-delay: 0.3s; }
+.grid-stagger > *:nth-child(7) { animation-delay: 0.35s; }
+.grid-stagger > *:nth-child(8) { animation-delay: 0.4s; }
+
+/* ========== SCROLL-REVEAL ========== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: all 0.6s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: all 0.6s ease;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.6s ease;
+}
+
+.reveal-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ========== HERO TITLE GRADIENT ANIMATION ========== */
+
+.hero-title {
+  background-size: 200% 200%;
+  animation: gradient-shift 4s ease infinite;
+}
+
+/* ========== LOADING SKELETON ========== */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--panel) 25%,
+    var(--glass) 50%,
+    var(--panel) 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+.skeleton-text {
+  height: 1em;
+  width: 100%;
+  margin: 0.5rem 0;
+}
+
+.skeleton-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.skeleton-card {
+  height: 120px;
+  width: 100%;
+  border-radius: var(--radius-md);
+}
+
+/* ========== ACTIVE SOLAR STORM EFFECT ========== */
+
+.storm-active {
+  animation: glow-pulse-red 1s ease-in-out infinite;
+  border-color: var(--crimson);
+  position: relative;
+}
+
+.storm-active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 45, 85, 0.1) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  animation: pulse-dot 1s ease-in-out infinite;
+}
+
+/* ========== GAUGE TRACK ANIMATION ========== */
+
+.gauge-path {
+  stroke-dasharray: 565 565;
+  stroke-dashoffset: 565;
+  transition: stroke-dashoffset 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gauge-path.gauge-safe {
+  stroke: var(--mint);
+  filter: drop-shadow(0 0 4px var(--mint));
+}
+
+.gauge-path.gauge-warning {
+  stroke: var(--gold);
+  filter: drop-shadow(0 0 4px var(--gold));
+}
+
+.gauge-path.gauge-danger {
+  stroke: var(--crimson);
+  filter: drop-shadow(0 0 4px var(--crimson));
+}
+
+/* ========== NUMBER COUNT ANIMATION ========== */
+
+.count-up {
+  animation: number-count 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* ========== ALERT ANIMATION ========== */
+
+.alert-slide {
+  animation: alert-slide-in 0.3s ease forwards;
+}
+
+/* ========== SOLAR WAVE EFFECT ========== */
+
+.solar-wave {
+  position: relative;
+  overflow: hidden;
+}
+
+.solar-wave::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 176, 32, 0.3),
+    transparent
+  );
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: solar-wave 1.5s ease-out;
+  pointer-events: none;
+}
+
+/* ========== BORDER GLOW ROTATE ========== */
+
+.border-glow-rotate {
+  animation: border-glow-rotate 3s ease infinite;
+}
+
+/* ========== PAGE TRANSITIONS ========== */
+
+.page-enter {
+  animation: fadeInScale 0.5s ease forwards;
+}
+
+.page-exit {
+  animation: fadeInScale 0.3s ease reverse;
+}
+
+/* ========== HOVER ANIMATIONS ========== */
+
+.hover-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.hover-glow {
+  transition: box-shadow 0.25s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.02);
+}
+
+/* ========== TRANSITION DEFAULTS ========== */
+
+button,
+.card,
+.module-card,
+.dest-card,
+input,
+.toggle-track,
+.btn,
+a,
+[role="button"] {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========== DATA LOADING ANIMATIONS ========== */
+
+@keyframes data-pulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.data-loading {
+  animation: data-pulse 1.5s ease-in-out infinite;
+}
+
+/* ========== THREE.JS SCENE OVERLAY ANIMATIONS ========== */
+
+.scene-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    rgba(2, 8, 20, 0.2) 100%
+  );
+  animation: pulse-dot 4s ease-in-out infinite;
+}
+
+/* ========== METRIC UPDATE ANIMATION ========== */
+
+@keyframes metric-flash {
+  0% {
+    background: transparent;
+  }
+  50% {
+    background: rgba(0, 194, 255, 0.15);
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+.metric-updated {
+  animation: metric-flash 0.3s ease;
+}
+
+/* ========== DONKI FEED SPECIFIC ========== */
+
+@keyframes connected-pulse {
+  0%, 100% {
+    opacity: 0.7;
+    text-shadow: 0 0 2px var(--mint);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 8px var(--mint);
+  }
+}
+
+.connected-pulse {
+  animation: connected-pulse 2s ease-in-out infinite;
+}
+
+/* ========== POWER METER ANIMATION ========== */
+
+@keyframes power-surge {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.05);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.power-surge {
+  animation: power-surge 0.3s ease;
+  transform-origin: left;
+}
+
+/* ========== RADIATION WARNING ========== */
+
+@keyframes radiation-wave {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 45, 85, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 45, 85, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 45, 85, 0);
+  }
+}
+
+.radiation-warning {
+  animation: radiation-wave 1.5s infinite;
+}
+
+/* ========== UTILITY - REDUCED MOTION ========== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

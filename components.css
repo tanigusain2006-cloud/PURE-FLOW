@@ -1,0 +1,767 @@
+/* ============================================
+   css/components.css - PureFlow UI Components
+   All components use CSS variables from style.css
+   ============================================ */
+
+/* ========== BUTTONS ========== */
+.btn {
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.5px;
+  border: none;
+  font-family: var(--font-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--void);
+}
+
+.btn-primary:hover {
+  background: var(--bright);
+  box-shadow: var(--shadow-glow-cyan);
+  transform: translateY(-2px);
+}
+
+.btn-danger {
+  background: var(--crimson);
+  color: white;
+}
+
+.btn-danger:hover {
+  box-shadow: var(--shadow-glow-red);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+
+.btn-ghost:hover {
+  background: rgba(0, 194, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--void);
+  font-weight: 700;
+}
+
+.btn-gold:hover {
+  box-shadow: var(--shadow-glow-gold);
+  transform: translateY(-2px);
+}
+
+/* ========== CARDS ========== */
+.card {
+  background: var(--panel);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--dim);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+}
+
+.card-accent {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-card), var(--shadow-glow-cyan);
+}
+
+.card-gold {
+  border-color: var(--gold);
+  box-shadow: var(--shadow-card), var(--shadow-glow-gold);
+}
+
+.card-danger {
+  border-color: var(--crimson);
+  box-shadow: var(--shadow-card), var(--shadow-glow-red);
+}
+
+.card-mint {
+  border-color: var(--mint);
+}
+
+/* ========== MODULE CARD (Habitat Builder Palette) ========== */
+.module-card {
+  background: var(--glass);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--dim);
+  padding: 1rem;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.module-card:hover {
+  border-color: var(--accent);
+  background: rgba(0, 194, 255, 0.05);
+  transform: translateX(4px);
+}
+
+.module-card.dragging {
+  opacity: 0.5;
+  cursor: grabbing;
+}
+
+.module-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background: rgba(0, 194, 255, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.module-info {
+  flex: 1;
+}
+
+.module-info h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.25rem;
+}
+
+.module-stats {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 2px;
+  display: flex;
+  gap: 0.75rem;
+}
+
+.module-stats span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* ========== DESTINATION CARDS ========== */
+.dest-card {
+  border: 2px solid var(--dim);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.25s ease;
+  background: var(--panel);
+}
+
+.dest-card:hover {
+  border-color: var(--accent);
+  transform: scale(1.03);
+}
+
+.dest-card.selected {
+  border-color: var(--accent);
+  background: rgba(0, 194, 255, 0.08);
+  box-shadow: var(--shadow-glow-cyan);
+}
+
+.dest-card .dest-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.dest-card .dest-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.dest-card .dest-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+/* Destination Cards Grid */
+.dest-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  margin: 1rem 0;
+}
+
+/* ========== BADGES / PILLS ========== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.badge-live {
+  background: rgba(255, 45, 85, 0.15);
+  color: var(--crimson);
+  border: 1px solid rgba(255, 45, 85, 0.4);
+}
+
+.badge-live::before {
+  content: "●";
+  animation: pulse-dot 1.5s infinite;
+  display: inline-block;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+}
+
+.badge-connected {
+  background: rgba(0, 229, 160, 0.12);
+  color: var(--mint);
+  border: 1px solid rgba(0, 229, 160, 0.35);
+}
+
+.badge-warning {
+  background: rgba(255, 176, 32, 0.12);
+  color: var(--gold);
+  border: 1px solid rgba(255, 176, 32, 0.3);
+}
+
+.badge-info {
+  background: rgba(0, 194, 255, 0.12);
+  color: var(--accent);
+  border: 1px solid rgba(0, 194, 255, 0.3);
+}
+
+/* ========== SOLAR ALERT CARD ========== */
+.alert-card {
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid var(--crimson);
+  background: rgba(255, 45, 85, 0.08);
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.alert-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--crimson);
+  opacity: 0.6;
+}
+
+.alert-card .alert-class {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--crimson);
+  font-family: var(--font-mono);
+}
+
+.alert-card .alert-details {
+  font-size: 0.85rem;
+  color: var(--silver);
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+}
+
+/* ========== METRICS SIDEBAR ========== */
+.metric-panel {
+  background: var(--glass);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  border: 1px solid var(--dim);
+}
+
+.metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--dim);
+}
+
+.metric-item:last-child {
+  border-bottom: none;
+}
+
+.metric-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--muted);
+}
+
+.metric-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+}
+
+.metric-value.safe {
+  color: var(--mint);
+}
+
+.metric-value.warning {
+  color: var(--gold);
+}
+
+.metric-value.danger {
+  color: var(--crimson);
+}
+
+/* ========== SURVIVABILITY GAUGE ========== */
+.gauge-container {
+  position: relative;
+  width: 240px;
+  height: 240px;
+  margin: 0 auto;
+}
+
+#gauge-svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.gauge-score {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.gauge-score .score-number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  font-family: var(--font-mono);
+  color: var(--white);
+}
+
+.gauge-score .score-label {
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+/* ========== PROGRESS BARS ========== */
+.progress-bar {
+  height: 6px;
+  background: var(--navy);
+  border-radius: 3px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-fill.cyan {
+  background: linear-gradient(90deg, var(--accent), var(--bright));
+}
+
+.progress-fill.gold {
+  background: linear-gradient(90deg, var(--ember), var(--gold));
+}
+
+.progress-fill.mint {
+  background: var(--mint);
+}
+
+.progress-fill.crimson {
+  background: var(--crimson);
+}
+
+/* ========== RANGE SLIDER ========== */
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  background: var(--dim);
+  border-radius: 2px;
+  outline: none;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 0 8px rgba(0, 194, 255, 0.5);
+  border: none;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  background: var(--bright);
+}
+
+/* ========== TOGGLE SWITCH ========== */
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-track {
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background: var(--navy);
+  border: 1px solid var(--dim);
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.toggle input:checked + .toggle-track {
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.toggle-thumb {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: white;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.25s ease;
+}
+
+.toggle input:checked ~ .toggle-thumb {
+  transform: translateX(24px);
+}
+
+/* ========== THREE.JS CANVAS ========== */
+#three-canvas-container {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--dim);
+  background: var(--void);
+  position: relative;
+  min-height: 400px;
+}
+
+#three-canvas-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
+/* ========== HISTORICAL STORM BUTTONS ========== */
+.storm-btn {
+  background: var(--navy);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  font-family: var(--font-mono);
+}
+
+.storm-btn:hover {
+  background: rgba(255, 176, 32, 0.1);
+  box-shadow: var(--shadow-glow-gold);
+  transform: translateY(-1px);
+}
+
+.storm-btn:active {
+  transform: scale(0.98);
+}
+
+/* ========== FAILURE MODE CARD ========== */
+.failure-card {
+  background: var(--panel);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--crimson);
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.failure-card .failure-title {
+  font-weight: 700;
+  color: var(--white);
+  font-size: 0.95rem;
+}
+
+.failure-card .failure-detail {
+  font-size: 0.82rem;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  margin-top: 0.3rem;
+}
+
+/* ========== ECLSS SYSTEM CARD ========== */
+.eclss-card {
+  background: var(--glass);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--dim);
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+}
+
+.eclss-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.eclss-value {
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: var(--font-mono);
+  color: var(--accent);
+}
+
+.eclss-label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  letter-spacing: 1px;
+}
+
+/* ========== STAT GRID ========== */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: var(--navy);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--white);
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--muted);
+}
+
+/* ========== DIVIDERS ========== */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--dim), transparent);
+  margin: 1.5rem 0;
+}
+
+.divider-vertical {
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--dim), transparent);
+}
+
+/* ========== TOOLTIPS ========== */
+[data-tooltip] {
+  position: relative;
+  cursor: help;
+}
+
+[data-tooltip]::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 0.75rem;
+  background: var(--navy);
+  color: var(--silver);
+  font-size: 0.75rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+  border: 1px solid var(--dim);
+}
+
+[data-tooltip]:hover::before {
+  opacity: 1;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .builder-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dest-cards {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .gauge-container {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .gauge-score .score-number {
+    font-size: 2.5rem;
+  }
+  
+  .metric-value {
+    font-size: 1.2rem;
+  }
+  
+  .module-card {
+    padding: 0.75rem;
+  }
+  
+  .module-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1rem;
+  }
+  
+  .btn {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.8rem;
+  }
+  
+  .alert-card .alert-class {
+    font-size: 1.2rem;
+  }
+  
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 1rem;
+  }
+  
+  .dest-card {
+    padding: 1rem;
+  }
+  
+  .dest-card .dest-icon {
+    font-size: 2rem;
+  }
+  
+  .metric-item {
+    padding: 0.625rem 0;
+  }
+  
+  .eclss-value {
+    font-size: 1.5rem;
+  }
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--accent);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--accent);
+  }
+}
+
+.glow-animation {
+  animation: glow-pulse 2s infinite;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.slide-in {
+  animation: slideInRight 0.3s ease forwards;
+}
+
+/* ========== LOADING SPINNER ========== */
+.spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid var(--dim);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
